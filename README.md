@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-time Chat Application</title>
-</head>
-<body>
+
 
     <h1>🌟 Real-time Chat Application</h1>
 
@@ -122,5 +115,4 @@
         <li><a href="https://github.com/HoussemRg">GitHub</a></li>
     </ul>
 
-</body>
-</html>
+
