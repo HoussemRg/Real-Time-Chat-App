@@ -36,17 +36,17 @@ function connect(event) {
   password = document.querySelector("#password").value;
   if (username) {
     //Enter your password
-    if (password == "hello") {
+    if (password) {
       usernamePage.classList.add("hidden");
       chatPage.classList.remove("hidden");
 
-      var socket = new SockJS("/websocket");
+      var socket = new SockJS("/ws");
       stompClient = Stomp.over(socket);
 
       stompClient.connect({}, onConnected, onError);
     } else {
       let mes = document.getElementById("mes");
-      mes.innerText = "Wrong password";
+      mes.innerText = "Password is required";
     }
   }
   event.preventDefault();
@@ -58,7 +58,7 @@ function onConnected() {
 
   // Tell your username to the server
   stompClient.send(
-    "/app/chat.register",
+    "/app/chat.addUser",
     {},
     JSON.stringify({ sender: username, type: "JOIN" })
   );
@@ -82,7 +82,7 @@ function send(event) {
       type: "CHAT",
     };
 
-    stompClient.send("/app/chat.send", {}, JSON.stringify(chatMessage));
+    stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
     messageInput.value = "";
   }
   event.preventDefault();
@@ -94,13 +94,13 @@ function send(event) {
  */
 function onMessageReceived(payload) {
   var message = JSON.parse(payload.body);
-
   var messageElement = document.createElement("li");
 
+  // Handle JOIN message and display a custom joining message
   if (message.type === "JOIN") {
     messageElement.classList.add("event-message");
-    message.content = message.sender + " joined!";
-  } else if (message.type === "LEAVE") {
+    message.content = message.sender + " is joining the conversation";  // Custom message
+  } else if (message.type === "LEAVER") {
     messageElement.classList.add("event-message");
     message.content = message.sender + " left!";
   } else {
@@ -117,9 +117,8 @@ function onMessageReceived(payload) {
     var usernameText = document.createTextNode(message.sender);
     usernameElement.appendChild(usernameText);
     messageElement.appendChild(usernameElement);
-    // * update
+
     usernameElement.style["color"] = getAvatarColor(message.sender);
-    //* update end
   }
 
   var textElement = document.createElement("p");
@@ -127,11 +126,13 @@ function onMessageReceived(payload) {
   textElement.appendChild(messageText);
 
   messageElement.appendChild(textElement);
-  // * update
+
+  // Update the style for own messages
   if (message.sender === username) {
-    // Add a class to float the message to the right
     messageElement.classList.add("own-message");
-  } // * update end
+  }
+
+  // Append the message to the chat area
   messageArea.appendChild(messageElement);
   messageArea.scrollTop = messageArea.scrollHeight;
 }
