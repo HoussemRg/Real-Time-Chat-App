@@ -51,7 +51,9 @@
 <h3>Installation</h3>
 <ol>
     <li><strong>Clone the repository:</strong>
+        
         <pre><code>git clone https://github.com/your-username/real-time-chat-app.git</code></pre>
+    
     </li>
 
     <li><strong>Backend Setup:</strong>
@@ -66,7 +68,7 @@
 
     <li><strong>Frontend Setup:</strong>
         <ul>
-            <li>Navigate to the <code>frontend</code> folder:</li>
+            <li>Navigate to the     <code>frontend</code> folder:</li>
             <pre><code>cd frontend</code></pre>
             <li>Install dependencies:</li>
             <pre><code>npm install</code></pre>
