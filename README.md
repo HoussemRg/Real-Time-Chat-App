@@ -49,33 +49,35 @@
 </ul>
 
 <h3>Installation</h3>
-<ul>
-    <li><strong>Clone the repository:</strong>
-        <pre><code>git clone https://github.com/your-username/real-time-chat-app.git</code></pre>
-    </li>
 
-    <li><strong>Backend Setup:</strong>
-        <ul>
-            <li>Navigate to the <code>backend</code> folder:</li>
-            <pre><code>cd backend</code></pre>
-            <li>Build and run the Spring Boot application:</li>
-            <pre><code>./mvnw spring-boot:run</code></pre>
-            <li>This will start the backend server on <code>http://localhost:8080</code>.</li>
-        </ul>
-    </li>
+1. **Clone the repository:**
 
-    <li><strong>Frontend Setup:</strong>
-        <ul>
-            <li>Navigate to the <code>frontend</code> folder:</li>
-            <pre><code>cd frontend</code></pre>
-            <li>Install dependencies:</li>
-            <pre><code>npm install</code></pre>
-            <li>Run the frontend application:</li>
-            <pre><code>npm start</code></pre>
-            <li>This will start the frontend server on <code>http://localhost:5173</code>.</li>
-        </ul>
-    </li>
-</ul>
+    ```bash
+    git clone https://github.com/your-username/real-time-chat-app.git
+    ```
+
+2. **Backend Setup:**
+   - Navigate to the `backend` folder (where your Spring Boot application is located):
+   
+     ```bash
+     cd backend
+     ```
+
+   - Build and run the Spring Boot application:
+   
+     ```bash
+     ./mvnw spring-boot:run
+     ```
+
+   - This will start the backend server on `http://localhost:8080`. The frontend will be served as static content from this server.
+
+3. **Access the Application:**
+   - Open your browser and go to `http://localhost:8080` to access the chat application.
+
+---
+
+**Note:** Since the frontend is integrated with the Spring Boot application, there's no need to run a separate server for it. The Spring Boot server will handle both backend and frontend.
+
 
 
 <h2>🎯 Usage</h2>
