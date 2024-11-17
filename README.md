@@ -49,7 +49,7 @@
 </ul>
 
 <h3>Installation</h3>
-
+<ul>
     <li><strong>Clone the repository:</strong>
         <pre><code>git clone https://github.com/your-username/real-time-chat-app.git</code></pre>
     </li>
@@ -75,6 +75,7 @@
             <li>This will start the frontend server on <code>http://localhost:5173</code>.</li>
         </ul>
     </li>
+</ul>
 
 
 <h2>🎯 Usage</h2>
