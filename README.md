@@ -60,7 +60,7 @@
    - Navigate to the `backend` folder (where your Spring Boot application is located):
    
      ```bash
-     cd backend
+     cd server
      ```
 
    - Build and run the Spring Boot application:
