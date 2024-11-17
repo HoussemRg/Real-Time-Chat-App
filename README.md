@@ -88,18 +88,18 @@
 <p>Here are some screenshots of the application:</p>
 
 <div class="screenshot">
-    <h3>1. Login Screen</h3>
-    <img src="s1.png" alt="Login Screen">
+    <h3>1</h3>
+    <img src="1.png" alt="Login Screen">
 </div>
 
 <div class="screenshot">
-    <h3>2. Chat Room</h3>
-    <img src="s2.png" alt="Chat Room">
+    <h3>2</h3>
+    <img src="2.png" alt="Chat Room">
 </div>
 
 <div class="screenshot">
-    <h3>3. User Notification</h3>
-    <img src="s3.png" alt="User Notification">
+    <h3>3</h3>
+    <img src="3.png" alt="User Notification">
 </div>
 
 <h2>🤝 Contributing</h2>
